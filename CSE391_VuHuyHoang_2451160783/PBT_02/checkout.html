@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh Toán Đơn Hàng</title>
+</head>
+<body>
+
+    <h1>Form Xác Nhận Đặt Hàng</h1>
+
+    <section>
+        <h2>1. Giỏ hàng của bạn</h2>
+        <table border="1" width="600" cellspacing="0" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Playstation 5</td>
+                    <td>10.000.000</td>
+                    <td>2</td>
+                    <td>10.000.000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Iphone 17 promax</td>
+                    <td>30.000.000đ</td>
+                    <td>1</td>
+                    <td>30.000.000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>SH 350I</td>
+                    <td>150.000.000đ</td>
+                    <td>3</td>
+                    <td>150.000.000đ</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" align="right"><b>Tổng cộng:</b></td>
+                    <td><b><output name="total">190.000.000đ</output></b></td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <br>
+
+    <form action="#" method="POST">
+        
+        <fieldset>
+            <legend>2. Phương thức thanh toán</legend>
+            
+            <input type="radio" id="cod" name="payment" value="COD" required>
+            <label for="cod">Thanh toán khi nhận hàng (COD)</label><br>
+            
+            <input type="radio" id="bank" name="payment" value="Chuyen khoan">
+            <label for="bank">Chuyển khoản ngân hàng</label><br>
+            
+            <input type="radio" id="wallet" name="payment" value="Vi dien tu">
+            <label for="wallet">Ví điện tử (Momo/ZaloPay)</label><br><br>
+
+            <label for="voucher">Mã giảm giá:</label>
+            <input type="text" id="voucher" name="voucher" pattern="^SALE[0-9]{4}$" placeholder="VD: SALE2026"><br><br>
+
+            <label for="note">Ghi chú (Tùy chọn):</label><br>
+            <textarea id="note" name="note" rows="3" cols="50" placeholder="Lưu ý giao hàng..."></textarea><br><br>
+
+            <p style="margin: 0;">Điểm tích lũy hiện có: <meter value="65" min="0" max="100" low="30" high="80">65%</meter> <i>(Sắp đạt thẻ Vàng)</i></p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>3. Thông tin giao hàng</legend>
+            
+            <label for="delivery_date">Ngày giao hàng mong muốn:</label>
+            <input type="date" id="delivery_date" name="delivery_date" min="2026-04-30" required><br><br>
+
+            <label for="time_slot">Khung giờ giao hàng:</label>
+            <select id="time_slot" name="time_slot" required>
+                <option value="">-- Chọn khung giờ --</option>
+                <option value="morning">Sáng 8-12h</option>
+                <option value="afternoon">Chiều 14-18h</option>
+                <option value="evening">Tối 18-21h</option>
+            </select><br><br>
+
+            <label for="delivery_range">Thời gian giao hàng tối đa (1 - 7 ngày):</label><br>
+            Nhanh nhất <input type="range" id="delivery_range" name="delivery_range" min="1" max="7" step="1" value="3"> Chậm nhất
+        </fieldset>
+        <br>
+
+        <button type="submit" aria-label="Xác nhận đặt hàng">Xác Nhận Đặt Hàng</button>
+        <button type="reset">Hủy bỏ</button>
+
+    </form>
+
+</body>
+</html>

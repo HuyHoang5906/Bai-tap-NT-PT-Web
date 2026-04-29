@@ -1,0 +1,169 @@
+<!DOCTYPE html> <!-- khai báo HTML5 -->
+<html lang="vi"> <!-- html: root của trang, lang="vi" để hỗ trợ SEO + trình đọc màn hình -->
+
+<head> <!-- head: chứa metadata -->
+    <meta charset="UTF-8"> <!-- charset: hỗ trợ tiếng Việt -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsive -->
+    <title>RTX 4070 - Huy Hoàng Store</title> <!-- title: tiêu đề tab -->
+</head>
+
+<body> <!-- body: toàn bộ nội dung hiển thị -->
+
+<header> <!-- header: phần đầu trang chứa logo, tìm kiếm, menu -->
+    
+    <a href="#"> <!-- a: logo có thể click về trang chủ -->
+        <img src="https://placehold.co/120x60" alt="Logo"> <!-- img: hiển thị logo -->
+    </a>
+
+    <form action="/search" method="GET"> <!-- form: chức năng tìm kiếm -->
+        <input type="search" placeholder="Tìm GPU..."> <!-- input search: nhập từ khóa -->
+        <button>Tìm kiếm</button> <!-- button: gửi form -->
+    </form>
+
+    <a href="#">Giỏ hàng</a> <!-- a: link đến trang giỏ hàng -->
+
+    <nav> <!-- nav: chứa menu điều hướng -->
+        <ul> <!-- ul: danh sách menu -->
+            <li><a href="#">Trang chủ</a></li> <!-- li: mỗi mục -->
+            <li><a href="#">RTX Series</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<nav aria-label="breadcrumb"> <!-- nav: breadcrumb là điều hướng -->
+    <ol> <!-- ol: breadcrumb có thứ tự cấp -->
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">GPU</a></li>
+        <li>RTX 4070</li>
+    </ol>
+</nav>
+
+<main> <!-- main: nội dung chính của trang -->
+
+<section id="product"> <!-- section: nhóm toàn bộ nội dung sản phẩm -->
+
+    <section id="product_img"> <!-- section: nhóm hình ảnh -->
+        <h2>Hình ảnh sản phẩm</h2> <!-- heading cho section -->
+
+        <figure> <!-- figure: nhóm ảnh + mô tả -->
+            <img src="https://placehold.co/200" alt="RTX 4070 1"> <!-- img: ảnh -->
+            <img src="https://placehold.co/200" alt="RTX 4070 2">
+            <img src="https://placehold.co/200" alt="RTX 4070 3">
+            <img src="https://placehold.co/200" alt="RTX 4070 4">
+            <img src="https://placehold.co/200" alt="RTX 4070 5">
+            <figcaption>Hình ảnh minh họa sản phẩm</figcaption> <!-- figcaption: chú thích -->
+        </figure>
+    </section>
+
+    <section id="product_info"> <!-- section: nhóm thông tin sản phẩm -->
+        
+        <article> <!-- article: nội dung độc lập (1 sản phẩm) -->
+            <h1>RTX 4070</h1> <!-- h1: tiêu đề chính -->
+
+            <p> <!-- p: đoạn mô tả -->
+                <strong>Giá: 15.000.000đ</strong> <!-- strong: nhấn mạnh giá -->
+                <br>
+                Đánh giá: ⭐⭐⭐⭐☆
+                <br><br>
+
+                <strong>Mô tả:</strong><br>
+                Card đồ họa RTX 4070 cho hiệu năng mạnh mẽ,<br>
+                hỗ trợ DLSS 3 và Ray Tracing.
+            </p>
+        </article>
+
+        <table border="1" cellpadding="8"> <!-- table: hiển thị thông số dạng bảng -->
+            
+            <thead> <!-- thead: tiêu đề bảng -->
+                <tr>
+                    <th>Thông số</th> <!-- th: tiêu đề cột -->
+                    <th>Chi tiết</th>
+                </tr>
+            </thead>
+
+            <tbody> <!-- tbody: dữ liệu chính -->
+                <tr>
+                    <td>GPU</td> <!-- td: dữ liệu -->
+                    <td>RTX 4070</td>
+                </tr>
+                <tr>
+                    <td>VRAM</td>
+                    <td>12GB</td>
+                </tr>
+                <tr>
+                    <td>Bus</td>
+                    <td>192-bit</td>
+                </tr>
+                <tr>
+                    <td>Công nghệ</td>
+                    <td>DLSS 3</td>
+                </tr>
+            </tbody>
+
+            <tfoot> <!-- tfoot: ghi chú -->
+                <tr>
+                    <td colspan="2">Thông số mang tính tham khảo</td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+    </section>
+
+    <section id="comment"> <!-- section: khu vực đánh giá -->
+        <h2>Đánh giá / Bình luận</h2>
+
+        <input type="text" placeholder="Tên của bạn..."> <!-- input text: nhập tên -->
+        <br><br>
+
+        <input type="text" placeholder="Nhập đánh giá..." style="width: 250px; height: 100px;"> <!-- input: nội dung -->
+        <br><br>
+
+        <button>Gửi</button> <!-- button: gửi bình luận -->
+
+        <article> <!-- article: mỗi bình luận là nội dung độc lập -->
+            <p><strong>Hoàng:</strong> Card chạy cực mượt</p>
+        </article>
+
+        <article>
+            <p><strong>Nam:</strong> Đáng tiền</p>
+        </article>
+    </section>
+
+    <aside> <!-- aside: nội dung phụ (sản phẩm liên quan) -->
+        <h2>Sản phẩm tương tự</h2>
+
+        <article> <!-- article: mỗi sản phẩm -->
+            <figure>
+                <img src="https://placehold.co/100" alt="RTX 4060">
+                <figcaption>RTX 4060</figcaption>
+            </figure>
+        </article>
+
+        <article>
+            <figure>
+                <img src="https://placehold.co/100" alt="RTX 4080">
+                <figcaption>RTX 4080</figcaption>
+            </figure>
+        </article>
+
+        <article>
+            <figure>
+                <img src="https://placehold.co/100" alt="RTX 4090">
+                <figcaption>RTX 4090</figcaption>
+            </figure>
+        </article>
+    </aside>
+
+</section>
+
+</main>
+
+<footer> <!-- footer: phần cuối trang -->
+    <p>© 2026 Huy Hoàng Store</p>
+</footer>
+
+</body>
+</html>
