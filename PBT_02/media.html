@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang Đa Phương Tiện</title>
+</head>
+<body>
+
+    <header>
+        <h1>Multimedia</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. Khu vực Hình ảnh</h2>
+            
+            <figure>
+                <img src="hinh1.jpg" alt="Hình 1" loading="lazy" style="max-width: 100%; height: auto;">
+                <figcaption>Chú thích hình 1.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="hinh2.jpg" alt="Hình 2" loading="lazy" style="max-width: 100%; height: auto;">
+                <figcaption>Chú thích hình 2.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="hinh3.jpg" alt="Hình 3" loading="lazy" style="max-width: 100%; height: auto;">
+                <figcaption>Chú thích hình 3.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>2. Video Nhúng (YouTube)</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/knW7-x7Y7RE?si=cbBFS2crOX9hpl5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <section>
+            <h2>3.Video Cục bộ</h2>
+            <video controls poster="hinh-nen-video.jpg" width="600">
+                <source src="video-mau.mp4" type="video/mp4">
+                <source src="video-mau.webm" type="video/webm">
+                Trình duyệt của bạn không hỗ trợ phát video.
+            </video>
+        </section>
+
+        <section>
+            <h2>4. Audio</h2>
+            <audio controls>
+                <source src="am-thanh-mau.mp3" type="audio/mpeg">
+                Trình duyệt của bạn không hỗ trợ phát âm thanh.
+            </audio>
+        </section>
+    </main>
+
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ccc;">
+        <h2>5. SVG</h2>
+    <svg width="900"  height="600" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <rect width="30" height="20" fill="#da251d"/>
+        <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0"/>
+    </svg>
+    </footer>
+</body>
+</html>

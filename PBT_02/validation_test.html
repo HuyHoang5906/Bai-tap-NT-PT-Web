@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test HTML5 Validation</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Test Form Validation (HTML5 Built-in)</h2>
+    <form action="#" method="POST">
+        
+        <div class="form-group">
+            <label for="th1">Case 1: required (Mandatory field)</label>
+            <input type="text" id="th1" required value="">
+        </div>
+
+        <div class="form-group">
+            <label for="th2">Case 2: type="email" (Auto-checks for @)</label>
+            <input type="email" id="th2" value="abc">
+        </div>
+
+        <div class="form-group">
+            <label for="th3">Case 3: max="10" (Maximum value)</label>
+            <input type="number" id="th3" min="1" max="10" value="15">
+        </div>
+
+        <div class="form-group">
+            <label for="th4">Case 4: pattern (Only 10 digits allowed)</label>
+            <input type="text" id="th4" pattern="[0-9]{10}" value="abc123">
+        </div>
+
+        <div class="form-group">
+            <label for="th5">Case 5: minlength="8" (Minimum 8 characters)</label>
+            <input type="password" id="th5" minlength="8" value="123">
+        </div>
+        
+        <button type="submit">Submit Test</button>
+    </form>
+</body>
+</html>
