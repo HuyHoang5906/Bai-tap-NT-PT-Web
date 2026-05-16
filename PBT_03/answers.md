@@ -116,12 +116,12 @@ Giải thích: Từ khóa !important phá vỡ mọi quy tắc ưu tiên thông 
 - Hop 1 (content-box):
   Chieu rong thuc te = 350px
 
-PBT_03/screenshots/Screenshot 2026-05-16 220314.png
+![alt text](image-3.png)
 
 - Hop 2 (border-box):
   Chieu rong thuc te = 300px
 
-PBT_03/screenshots/Screenshot 2026-05-16 220457.png
+![alt text](image-4.png)
 
 ##### Giai thich su khac biet
 
@@ -141,13 +141,13 @@ Voi border-box:
 
 Tong kich thuoc cua 3 cot lon hon 1000px nen layout bi tran.
 
-PBT_03/screenshots/Screenshot 2026-05-16 220651.png
+![alt text](image-5.png)
 
 ##### Truong hop CO dung border-box
 
 Tong kich thuoc van giu dung 1000px nen layout hien thi gon gang.
 
-PBT_03/screenshots/Screenshot 2026-05-16 220834.png
+![alt text](image-6.png)
 
 ### Bài B3 (15đ) — Specificity Battle
 #### 10 CSS Rules va Specificity
@@ -265,3 +265,5 @@ Nếu bắt buộc không được dùng `border-box`, ta phải chủ động t
 **4. "Mô tả sản phẩm B" (p.highlight):**
 - **Color:** `green`
 - **Giải thích:** Mặc dù thẻ `<p>` chịu lệnh `color: inherit` từ `.card p`, nhưng bản thân nó lại được gắn class `.highlight`. Một lần nữa, sức mạnh của `!important` trong rule `.highlight { color: green !important; }` đã phá vỡ sự kế thừa thông thường, ép dòng chữ này thành màu **green**.
+
+![alt text](image-2.png)
