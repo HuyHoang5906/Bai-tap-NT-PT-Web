@@ -193,6 +193,8 @@ Rule #demo.text.highlight co specificity cao nhat
 (1,2,0) nen duoc uu tien ap dung.
 
 ---
+#### Screenshot ket qua
+![alt text](image-1.png)
 
 #### Neu thay doi thu tu CSS rules thi sao?
 
@@ -202,3 +204,64 @@ Neu specificity khac nhau:
 
 Neu specificity bang nhau:
 - Rule viet sau se duoc uu tien.
+
+## PHẦN C — DEBUG & SUY LUẬN (20 điểm)
+### Câu C1 (10đ) — Debug CSS Layout
+#### 1. Tính chiều rộng thực tế (Áp dụng Box Model mặc định `content-box`):
+
+Theo cơ chế mặc định của trình duyệt (`content-box`), thuộc tính `width` chỉ xác định chiều rộng của **vùng nội dung (content area)**. Do đó, kích thước thực tế hiển thị trên màn hình phải cộng thêm độ dày của `padding` (lề trong) và `border` (đường viền) ở cả hai bên (trái và phải).
+
+*Công thức tính: Chiều rộng thực tế = width + padding trái + padding phải + border trái + border phải*
+
+- **Khối Sidebar:**
+  - Width khai báo: 300px
+  - Padding 2 bên: 20px * 2 = 40px
+  - Border 2 bên: 1px * 2 = 2px
+  => **Chiều rộng thực tế Sidebar = 300 + 40 + 2 = 342px**
+
+- **Khối Content:**
+  - Width khai báo: 660px
+  - Padding 2 bên: 30px * 2 = 60px
+  - Border 2 bên: 1px * 2 = 2px
+  => **Chiều rộng thực tế Content = 660 + 60 + 2 = 722px**
+
+#### 2.Tại sao layout bị vỡ:
+
+- Tổng không gian mà hai khối con yêu cầu khi đặt cạnh nhau là: `342px (Sidebar) + 722px (Content) = 1064px`.
+- Tuy nhiên, khối cha bao bọc bên ngoài (`.container`) lại bị khóa cứng chiều rộng ở mức `width: 960px`.
+- **Nguyên nhân vỡ layout:** Vì tổng kích thước 2 khối con (1064px) lớn hơn sức chứa của khối cha (960px), chúng không thể nằm vừa trên cùng một hàng ngang. Theo quy tắc của thuộc tính `float: left`, khi không đủ không gian, khối đi sau (ở đây là `.content`) sẽ tự động bị đẩy (rớt) xuống dòng mới bên dưới khối `.sidebar`.
+
+#### 3. Hai phương án sửa lỗi:
+
+##### Cách 1: Sử dụng `box-sizing: border-box`
+Khi thêm thuộc tính này, cơ chế tính toán sẽ thay đổi. Giá trị `width` lúc này sẽ bao trọn cả content, padding và border. Trình duyệt sẽ tự động bóp nhỏ vùng nội dung bên trong lại để giữ cho tổng chiều rộng không đổi.
+- Thêm dòng code này lên đầu CSS: `* { box-sizing: border-box; }`
+- *Kết quả:* Sidebar bị ép cứng ở đúng mức **300px**, Content ép cứng ở mức **660px**. Tổng hai khối là `300 + 660 = 960px`, vừa khít 100% với `.container`. Hai khối nằm ngang nhau hoàn hảo.
+
+##### Cách 2: Sửa thủ công bằng toán học (Giữ nguyên `content-box` mặc định)
+Nếu bắt buộc không được dùng `border-box`, ta phải chủ động trừ hao giá trị `width` khai báo trong CSS, sao cho khi cộng thêm padding và border, tổng chiều rộng thực tế mới bằng con số ta mong muốn.
+- **Sửa `.sidebar`:** Ta muốn tổng là 300px. Trừ đi padding (40px) và border (2px) => Ta khai báo `width: 258px;`.
+- **Sửa `.content`:** Ta muốn tổng là 660px. Trừ đi padding (60px) và border (2px) => Ta khai báo `width: 598px;`.
+- *Kết quả:* + Khối Sidebar mới: 258 + 40 + 2 = 300px.
+  + Khối Content mới: 598 + 60 + 2 = 660px.
+  + Tổng lại vẫn là 960px, layout được cứu chữa thành công.
+
+### Câu C2 — Cascade Puzzle
+
+**1. "Sản phẩm A" (h2):**
+- **Font-size:** `20px`
+- **Color:** `green`
+- **Giải thích:** Thẻ h2 này mang class `.title`, chịu tác động của rule `.card .title { font-size: 20px; }` nên nó ghi đè font-size 14px của `.container`. Về màu sắc, dù nó nằm trong thẻ có ID `#featured` (có rule `#featured .title { color: red; }`), nhưng bản thân thẻ h2 này lại mang class `.highlight`. Vì rule `.highlight { color: green !important; }` có chứa từ khóa `!important`, nó sở hữu quyền lực tuyệt đối, đánh bại ID selector và áp đặt màu **green**.
+
+**2. "Mô tả sản phẩm" (p trong card featured):**
+- **Color:** `blue`
+- **Giải thích:** Thẻ `<p>` này chịu tác động của rule `.card p { color: inherit; }`. Từ khóa `inherit` buộc nó phải lấy chính xác màu của thẻ cha trực tiếp bao bọc nó (là thẻ `<div class="card" id="featured">`). Vì rule `#featured .title` chỉ nhắm tới thẻ `.title` bên trong chứ không nhắm tới bản thân thẻ `#featured`, nên thẻ `#featured` lấy màu theo rule `.card { color: blue; }`. Do đó, thẻ `<p>` kế thừa và mang màu **blue**.
+
+**3. "Sản phẩm B" (h2):**
+- **Font-size:** `20px`
+- **Color:** `blue`
+- **Giải thích:** Tương tự như trên, font-size được thiết lập bởi `.card .title`. Tuy nhiên, thẻ này không có ID `#featured` cũng không có class `.highlight`. Do không có rule nào trực tiếp set màu cho nó, nó sẽ tự động kế thừa màu chữ từ thẻ cha gần nhất là `.card`. Vì `.card { color: blue; }`, nên "Sản phẩm B" có màu **blue**.
+
+**4. "Mô tả sản phẩm B" (p.highlight):**
+- **Color:** `green`
+- **Giải thích:** Mặc dù thẻ `<p>` chịu lệnh `color: inherit` từ `.card p`, nhưng bản thân nó lại được gắn class `.highlight`. Một lần nữa, sức mạnh của `!important` trong rule `.highlight { color: green !important; }` đã phá vỡ sự kế thừa thông thường, ép dòng chữ này thành màu **green**.

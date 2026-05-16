@@ -1,0 +1,77 @@
+/* ==========================================================================
+   CÁCH SỬA 1: Bật dòng dưới đây để áp dụng border-box toàn cục (Khuyên dùng)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f6fa;
+    color: #2f3542;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.status-note {
+    text-align: center;
+    color: #2ed573;
+    margin-bottom: 30px;
+}
+
+/* KHỐI CHA CONTAINER RỘNG 960PX */
+.container {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    
+    /* Sửa chữ border thành outline ở dòng dưới đây */
+    outline: 2px solid #ff4757; 
+    
+    overflow: hidden; 
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* KHỐI SIDEBAR */
+.sidebar {
+    /* --- CẤU HÌNH GỐC ĐỀ BÀI --- */
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    
+    /* --- CÁCH SỬA 2 --- */
+    /* Nếu không dùng border-box ở trên, hãy tắt border-box và đổi thành: */
+    /* width: 258px; */
+    
+    background-color: #ffeaa7;
+    min-height: 200px;
+}
+
+/* KHỐI CONTENT */
+.content {
+    /* --- CẤU HÌNH GỐC ĐỀ BÀI --- */
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    
+    /* --- CÁCH SỬA 2 --- */
+    /* Nếu không dùng border-box ở trên, hãy tắt border-box và đổi thành: */
+    /* width: 598px; */
+    
+    background-color: #74b9ff;
+    min-height: 200px;
+}
