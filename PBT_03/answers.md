@@ -152,34 +152,34 @@ Tong kich thuoc van giu dung 1000px nen layout hien thi gon gang.
 ### Bài B3 (15đ) — Specificity Battle
 #### 10 CSS Rules va Specificity
 
-1. p
+1. `p`
    Specificity: 0,0,1
 
-2. .text
+2. `.text`
    Specificity: 0,1,0
 
-3. .highlight
+3. `.highlight`
    Specificity: 0,1,0
 
-4. p.text
+4.` p.text`
    Specificity: 0,1,1
 
-5. p.highlight
+5.`p.highlight`
    Specificity: 0,1,1
 
-6. .text.highlight
+6. `.text.highlight`
    Specificity: 0,2,0
 
-7. p.text.highlight
+7. `p.text.highlight`
    Specificity: 0,2,1
 
-8. #demo
+8.` #demo`
    Specificity: 1,0,0
 
-9. #demo.text
+9. `#demo.text`
    Specificity: 1,1,0
 
-10. #demo.text.highlight
+10.` #demo.text.highlight`
     Specificity: 1,2,0
 
 ---
