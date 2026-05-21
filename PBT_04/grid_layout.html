@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài B3 - Grid Layout</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+
+    <div class="layout-wrapper">
+        <!-- HEADER -->
+        <header class="header">
+            <h1>E-Commerce Store</h1>
+        </header>
+
+        <!-- HERO BANNER -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Khuyến mãi mùa hè!</h2>
+                <p>Giảm giá lên đến 50%</p>
+            </div>
+            <!-- Bonus: Card nổi bật chiếm 2 cột -->
+            <div class="featured-hero-product">
+                Sản phẩm nổi bật (Span 2 cột)
+            </div>
+        </section>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h3>Bộ lọc</h3>
+            <label><input type="checkbox"> Áo thun</label><br>
+            <label><input type="checkbox"> Quần Jeans</label><br>
+            <label><input type="checkbox"> Giày thể thao</label>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <div class="main-grid">
+                <div class="product-item">Card 1</div>
+                <div class="product-item">Card 2</div>
+                <div class="product-item">Card 3</div>
+                <div class="product-item">Card 4</div>
+                <div class="product-item">Card 5</div>
+                <div class="product-item">Card 6</div>
+            </div>
+        </main>
+
+        <!-- ADS -->
+        <aside class="ads">
+            <div class="ad-banner">
+                Quảng cáo 1<br>(Placeholder)
+            </div>
+            <div class="ad-banner" style="margin-top: 15px;">
+                Quảng cáo 2<br>(Placeholder)
+            </div>
+        </aside>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 E-Commerce Store. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

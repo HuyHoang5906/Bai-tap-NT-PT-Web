@@ -1,0 +1,78 @@
+*{
+    background-color: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card img{
+    width: 100%;
+    display: block;
+}
+
+.card h3{
+    padding: 15px 15px 10px;
+}
+
+.card p{
+    padding: 0 15px 20px;
+    color: #555;
+}
+
+/* HOT BADGE */
+.badge{
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background-color: red;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+/* SCROLL TO TOP BUTTON */
+.top-btn{
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #222;
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.top-btn:hover{
+    background-color: #ff4d4d;
+}
