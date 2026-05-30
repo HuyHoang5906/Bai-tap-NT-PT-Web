@@ -595,7 +595,7 @@ Kết quả:
 
 # PHẦN C — PHÂN TÍCH (20 điểm)
 ## Câu C1 (10đ) — Phân tích trang web thực
-VNEXPRESS:  
+YOUTOBE:
 - Mobile (375px)
 ![alt text](image-13.png)
 - Tablet (768px)
