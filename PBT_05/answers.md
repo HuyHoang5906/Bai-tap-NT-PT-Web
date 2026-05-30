@@ -592,3 +592,42 @@ Kết quả:
 - SCSS giúp code dễ bảo trì và tái sử dụng
 
 ---
+
+# PHẦN C — PHÂN TÍCH (20 điểm)
+## Câu C1 (10đ) — Phân tích trang web thực
+VNEXPRESS:  
+- Mobile (375px)
+![alt text](image-13.png)
+- Tablet (768px)
+![alt text](image-14.png)
+- Desktop (1440px)
+![alt text](image-15.png)
+1. Navigation thay đổi thế nào?
+```
+Desktop (1440px): Thanh menu ngang hiển thị đầy đủ tất cả các chuyên mục và liên kết phụ.
+
+Tablet (768px) & Mobile (375px): Thanh menu bị ẩn. Xuất hiện Hamburger menu (biểu tượng 3 dấu gạch ngang) ở góc trái trên cùng để chứa các danh mục bị ẩn. Thanh chuyên mục bên dưới chuyển thành dạng cuộn ngang.
+```
+
+2. Lưới content thay đổi mấy cột?
+```
+Desktop: Lưới hiển thị nhiều cột (phía dưới bài viết chính là lưới 3 cột cho 3 bài viết phụ).
+
+Tablet: Vẫn giữ lưới 3 cột nhưng khoảng cách và chiều ngang các cột bị thu hẹp lại.
+
+Mobile: Lưới content bẻ hoàn toàn thành 1 cột duy nhất. Các bài viết xếp chồng lên nhau.
+```
+3. Elements nào bị ẩn trên mobile?
+```
+Thông tin thời tiết (Hà Nội 29 độ), thứ/ngày/tháng ở trên cùng.
+
+Các liên kết phụ trên header như: "Mới nhất", "Tin theo khu vực", "International".
+
+Biểu tượng kính lúp tìm kiếm và nút "Đăng nhập" (những phần này được đẩy vào trong Hamburger menu).
+```
+4. Font size có thay đổi không?
+```
+Có. Kích thước font chữ của tiêu đề bài viết trên Mobile nhỏ hơn so với Desktop và Tablet. Việc này giúp tiêu đề không bị rớt thành quá nhiều dòng, tiết kiệm không gian trên màn hình điện thoại hẹp.
+```
+
+## Câu C2 (10đ) — Thiết kế Responsive Strategy
