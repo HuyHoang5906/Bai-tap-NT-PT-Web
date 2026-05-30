@@ -1,0 +1,117 @@
+body{
+    font-family: Arial;
+    padding: 40px;
+}
+
+/* CARD */
+
+.card{
+    width: 300px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background-color: white;
+
+    transition: all 0.3s ease;
+
+    animation: fadeIn 1s ease;
+}
+
+/* CARD HOVER */
+
+.card:hover{
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* IMAGE CONTAINER */
+
+.image-container{
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* IMAGE */
+
+.image-container img{
+    width: 100%;
+
+    transition: transform 0.3s ease;
+}
+
+/* IMAGE HOVER */
+
+.image-container:hover img{
+    transform: scale(1.1);
+}
+
+/* BUTTON */
+
+button{
+    margin-top: 20px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER */
+
+button:hover{
+    background-color: black;
+
+    transform: scale(1.05);
+}
+
+/* SPINNER */
+
+.spinner{
+    width: 60px;
+    height: 60px;
+
+    border: 6px solid #ccc;
+    border-top: 6px solid #2563eb;
+
+    border-radius: 50%;
+
+    margin-top: 40px;
+
+    animation: spin 1s linear infinite;
+}
+
+/* KEYFRAMES */
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

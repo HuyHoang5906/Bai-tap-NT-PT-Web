@@ -2,7 +2,7 @@
 
 ---
 
-# Câu A1 (10đ) — 5 Loại Positioning
+## Câu A1 (10đ) — 5 Loại Positioning
 
 | Position | Vẫn chiếm chỗ trong flow? | Tham chiếu vị trí | Cuộn theo trang? | Use case |
 |---|---|---|---|---|
@@ -110,11 +110,11 @@ Nên `.child` sẽ định vị theo `.grandparent`.
 
 ---
 
-# Câu A2 (10đ) — Flexbox vs Grid
+## Câu A2 (10đ) — Flexbox vs Grid
 
 ---
 
-## Trường hợp 1
+### Trường hợp 1
 
 ```css
 .container { 
@@ -126,12 +126,12 @@ Nên `.child` sẽ định vị theo `.grandparent`.
 }
 ```
 
-### Dự đoán bố cục
+#### Dự đoán bố cục
 
 - 4 item nằm trên cùng 1 hàng
 - Mỗi item có chiều rộng bằng nhau
 
-### Sơ đồ
+#### Sơ đồ
 
 ```text
 +------+------+------+------+
@@ -141,7 +141,7 @@ Nên `.child` sẽ định vị theo `.grandparent`.
 
 ---
 
-## Trường hợp 2
+### Trường hợp 2
 
 ```css
 .container { 
@@ -155,13 +155,13 @@ Nên `.child` sẽ định vị theo `.grandparent`.
 }
 ```
 
-### Dự đoán bố cục
+#### Dự đoán bố cục
 
 - Mỗi item chiếm khoảng 50% chiều rộng
 - Mỗi hàng chứa 2 item
 - 6 item → 3 hàng × 2 cột
 
-### Sơ đồ
+#### Sơ đồ
 
 ```text
 +--------+--------+
@@ -179,7 +179,7 @@ Nên `.child` sẽ định vị theo `.grandparent`.
 
 ---
 
-## Trường hợp 3
+### Trường hợp 3
 
 ```css
 .container { 
@@ -189,13 +189,13 @@ Nên `.child` sẽ định vị theo `.grandparent`.
 }
 ```
 
-### Dự đoán bố cục
+#### Dự đoán bố cục
 
 - 3 item nằm trên cùng 1 hàng
 - Khoảng trống chia đều giữa các item
 - Các item căn giữa theo chiều dọc
 
-### Sơ đồ
+#### Sơ đồ
 
 ```text
 |item1            item2            item3|
@@ -203,7 +203,7 @@ Nên `.child` sẽ định vị theo `.grandparent`.
 
 ---
 
-## Trường hợp 4
+### Trường hợp 4
 
 ```css
 .container { 
@@ -213,7 +213,7 @@ Nên `.child` sẽ định vị theo `.grandparent`.
 }
 ```
 
-### Dự đoán bố cục
+#### Dự đoán bố cục
 
 Grid có 3 cột:
 
@@ -221,7 +221,7 @@ Grid có 3 cột:
 - Cột giữa: tự co giãn (`1fr`)
 - Cột phải: 200px
 
-### Sơ đồ
+#### Sơ đồ
 
 ```text
 +--------+------------------+--------+
@@ -231,7 +231,7 @@ Grid có 3 cột:
 
 ---
 
-## Trường hợp 5
+### Trường hợp 5
 
 ```css
 .container { 
@@ -241,12 +241,12 @@ Grid có 3 cột:
 }
 ```
 
-### Dự đoán bố cục
+#### Dự đoán bố cục
 
 - Grid có 3 cột bằng nhau
 - 7 item sẽ tự xuống hàng
 
-### Kết quả
+#### Kết quả
 
 - Hàng 1: 3 item
 - Hàng 2: 3 item
@@ -254,7 +254,7 @@ Grid có 3 cột:
 
 → Tổng cộng: 3 hàng
 
-### Sơ đồ
+#### Sơ đồ
 
 ```text
 +------+------+------+
@@ -274,3 +274,86 @@ Item cuối cùng nằm ở:
 
 - Hàng thứ 3
 - Cột thứ 1
+
+# PHẦN C — SUY LUẬN
+
+### Câu C1 — Flexbox vs Grid: Khi nào dùng gì?
+
+| # | Tình huống | Chọn | Giải thích |
+|---|------------|------|------------|
+| 1 | Navigation bar ngang (logo + menu + buttons) | **Flexbox** | Một hàng, phân bố theo trục chính (`justify-content`, `align-items`). Flexbox tối ưu cho layout 1 chiều. |
+| 2 | Lưới ảnh Instagram (3 cột đều, số ảnh không cố định) | **Grid** | Cần lưới 2 chiều: `grid-template-columns: repeat(3, 1fr)` tự xuống hàng khi thêm item. Grid quản lý hàng/cột rõ ràng hơn flex wrap. |
+| 3 | Layout blog: main + sidebar | **Grid** (hoặc **kết hợp**) | Bố cục trang 2D: `grid-template-columns: 1fr 300px`. Có thể dùng Grid cho khung trang, Flexbox bên trong từng vùng nếu cần. |
+| 4 | Footer 4 cột thông tin | **Grid** | 4 cột song song, đồng đều: `grid-template-columns: repeat(4, 1fr)`. Grid căn cột đều hơn so với flex + width %. |
+| 5 | Card sản phẩm (ảnh trên, text giữa, nút dính đáy) | **Flexbox** | Card là container `display: flex; flex-direction: column;` + `margin-top: auto` trên nút đẩy nút xuống đáy dù mô tả dài/ngắn khác nhau. |
+
+---
+
+### Câu C2 — Debug Flexbox
+
+#### Lỗi 1 — Cards không đều chiều cao, nút "Mua" nhảy lên/xuống
+
+**Nguyên nhân:** `.card` không phải flex container theo cột, nên nút không có cơ chế đẩy xuống đáy. Chiều cao card phụ thuộc nội dung từng card → nút không thẳng hàng.
+
+**Code sửa:**
+
+```css
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+.card {
+    width: 30%;
+    margin: 1.5%;
+    display: flex;
+    flex-direction: column;
+}
+.card img { width: 100%; }
+.card h3 { font-size: 18px; flex-grow: 0; }
+.card .btn {
+    padding: 10px;
+    margin-top: auto; 
+}
+```
+
+
+
+---
+
+#### Lỗi 2 — Muốn căn giữa ngang + dọc trong 100vh nhưng content dính góc trái trên
+
+**Nguyên nhân:** `.hero` có `display: flex` nhưng thiếu `justify-content` và `align-items` (mặc định `flex-start`).
+
+**Code sửa:**
+
+```css
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-content {
+    text-align: center;
+}
+```
+
+**Screenshot:** `screenshots/c2_loi2_truoc.png`, `screenshots/c2_loi2_sau.png`.
+
+---
+
+#### Lỗi 3 — Sidebar bị co khi content quá dài
+
+**Nguyên nhân:** Trong flex container, item mặc định `flex-shrink: 1`. Sidebar có `width: 250px` nhưng vẫn bị co khi `.content` chiếm nhiều chỗ.
+
+**Code sửa:**
+
+```css
+.layout { display: flex; }
+.sidebar {
+    width: 250px;
+    flex: 0 0 250px;
+    min-width: 250px;
+}
+.content { flex: 1; min-width: 0; }
+```
