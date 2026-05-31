@@ -1,0 +1,12 @@
+body { font-family: sans-serif; text-align: center; padding: 50px; }
+#gallery { width: 400px; height: 250px; margin: 0 auto; background: #333; position: relative; display: flex; justify-content: center; align-items: center; color: white; font-size: 24px; outline: none; }
+#gallery:focus-visible { box-shadow: 0 0 0 4px #007bff; }
+.slide { display: none; }
+.slide.active { display: block; }
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: flex-start; padding-top: 100px; }
+.modal.hidden { display: none; }
+.cmd-content { background: white; width: 400px; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; }
+#cmdInput { width: 100%; padding: 15px; border: none; border-bottom: 1px solid #eee; outline: none; font-size: 16px; box-sizing: border-box; }
+#cmdList { list-style: none; margin: 0; padding: 0; text-align: left; }
+#cmdList li { padding: 12px 15px; cursor: pointer; outline: none; }
+#cmdList li:focus, #cmdList li:hover { background: #007bff; color: white; }

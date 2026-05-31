@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Shortcuts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Gallery (Dùng phím ← → hoặc 1-5, Space để Play)</h2>
+    <div id="gallery" tabindex="0" aria-label="Image gallery">
+        <div class="slide active">Ảnh 1</div>
+        <div class="slide">Ảnh 2</div>
+        <div class="slide">Ảnh 3</div>
+        <div class="slide">Ảnh 4</div>
+        <div class="slide">Ảnh 5</div>
+    </div>
+    <p>Ấn <b>Ctrl + K</b> để mở Command Palette</p>
+
+    <div id="cmdPalette" class="modal hidden" role="dialog" aria-label="Command Palette">
+        <div class="cmd-content">
+            <input type="text" id="cmdInput" placeholder="Type a command...">
+            <ul id="cmdList">
+                <li tabindex="0">Go to Profile</li>
+                <li tabindex="0">Settings</li>
+                <li tabindex="0">Logout</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
