@@ -1,0 +1,15 @@
+:root { --bg: #f9f9f9; --text: #333; --card-bg: #fff; --primary: #007bff; }
+body.dark-mode { --bg: #1a1a1a; --text: #f0f0f0; --card-bg: #2d2d2d; }
+body { font-family: Arial, sans-serif; background: var(--bg); color: var(--text); margin: 0; transition: 0.3s; }
+header { padding: 20px; background: var(--card-bg); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.controls { display: flex; gap: 10px; margin-bottom: 15px; }
+#catalog { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 20px; }
+.card { background: var(--card-bg); padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; text-align: center; }
+.card img { width: 100%; height: 150px; object-fit: cover; border-radius: 4px; }
+.card button { background: var(--primary); color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+#cartBadge { background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; }
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; }
+.modal.hidden { display: none; }
+.modal-content { background: var(--card-bg); padding: 20px; border-radius: 8px; width: 300px; position: relative; }
+.close-modal { position: absolute; top: 10px; right: 15px; font-size: 20px; cursor: pointer; }
+.cat-btn.active { font-weight: bold; color: var(--primary); }
